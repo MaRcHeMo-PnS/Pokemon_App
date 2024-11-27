@@ -125,7 +125,7 @@ function Pokedex() {
 							<div className="pokedex__cards">
 								{pokemonUrl ? (
 									<>
-										<PokemonCard url={pokemonUrl} filter={filter} />
+										<PokemonCard url={pokemonUrl} />
 									</>
 								) : (
 									<>
