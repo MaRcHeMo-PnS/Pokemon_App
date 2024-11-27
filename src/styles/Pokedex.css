@@ -1,0 +1,65 @@
+.pokedex {
+	padding: 3em 0;
+	background-image: url('https://uvn-brightspot.s3.amazonaws.com/assets/vixes/btg/atmosfera_cielo.jpg');
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
+.ret {
+	font-size: 30px;
+}
+
+.pokedex__header {
+	margin: 1em 0;
+}
+
+.pokedex__btn {
+	display: flex;
+	justify-content: space-between;
+	margin: 1em 0;
+}
+
+.pokedex__btn--an {
+	background-color: rgb(208, 73, 73);
+	border: transparent;
+	padding: 0.5em 1em;
+	border-radius: 0 4px 4px 0;
+	color: #fff;
+	cursor: pointer;
+	transition: background-color 0.2s ease-in-out;
+}
+
+.pokedex__btn--an:hover {
+	background-color: rgb(179, 48, 48);
+}
+
+.pokedex__btn--an:disabled {
+	background-color: black;
+}
+
+.pokemon__text {
+	display: flex;
+	justify-content: center;
+}
+
+.pokemon__container {
+	/* align-items: center; */
+	max-width: 1024px;
+	margin: 0 auto;
+	padding: 0 1em;
+}
+
+.pokedex__form {
+	display: flex;
+	gap: 0.75em;
+	justify-content: center;
+	align-items: center;
+	margin-bottom: 2em;
+}
+
+.pokedex__cards {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+	gap: 1.25em;
+}
