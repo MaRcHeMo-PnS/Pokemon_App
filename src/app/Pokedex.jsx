@@ -21,7 +21,7 @@ function Pokedex() {
 	const [pokemons, setPokemons, loading] = useFetch();
 	const [pokemonUrl, setPokemonUrl] = useState(null);
 	const [isFiltering, setIsFiltering] = useState(false);
-	// const [filter, setFilter] = useState(false);
+	const [filter, setFilter] = useState(false);
 
 	useEffect(() => {
 		getPokemons();
@@ -65,18 +65,6 @@ function Pokedex() {
 		setPokemons(pokemons?.previous);
 	};
 
-	// const imgPok = filter;
-
-	// const imgPok = () => {
-	// 	if (!filter) {
-	// 		imgPok =
-	// 			'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/';
-	// 	} else {
-	// 		imgPok =
-	// 			'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/';
-	// 	}
-	// };
-
 	const pokemonsArry = isFiltering ? pokemons?.pokemon : pokemons?.results;
 
 	return (
@@ -84,15 +72,17 @@ function Pokedex() {
 			<Link className="ret" to="/">
 				{'<-'} Volver
 			</Link>
-			{/* <div>
-				<label htmlFor="checkbox">Shiny</label>
+			<div>
+				<label className="tik" htmlFor="checkbox">
+					Shiny
+				</label>
 				<input
 					type="checkbox"
 					name="filter"
 					onChange={() => setFilter(!filter)}
 					id="checkbox"
 				/>
-			</div> */}
+			</div>
 			<div className="pokedex__header">
 				<div className="pokemon__container">
 					<p className="pokemon__text">
@@ -125,13 +115,14 @@ function Pokedex() {
 							<div className="pokedex__cards">
 								{pokemonUrl ? (
 									<>
-										<PokemonCard url={pokemonUrl} />
+										<PokemonCard url={pokemonUrl} filter={filter} />
 									</>
 								) : (
 									<>
 										<PokemonList
 											pokemons={pokemonsArry}
 											isFiltering={isFiltering}
+											filter={filter}
 										/>
 									</>
 								)}

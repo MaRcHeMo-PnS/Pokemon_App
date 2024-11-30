@@ -18,15 +18,20 @@ function PokemonCard({ url, filter }) {
 
 	if (!types) return;
 
-	// if (!filter) return;
+	// const pokemonsArry = isFiltering ? pokemons?.pokemon : pokemons?.results;
 
-	// console.log(filters);
+	const imgPok = filter
+		? pokemon?.sprites?.front_shiny
+		: pokemon?.sprites?.front_default;
+	// 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/';
+	// 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/'
+	console.log(imgPok);
 
 	return (
 		<Link className="poke" to={`/pokedex/${pokemon?.name}`}>
 			<div className={`poke__card type--${types[0]}`}>
 				<div className="poke__card-header">
-					<img src={pokemon?.sprites?.front_shiny} alt="" />
+					<img src={`${imgPok}`} alt="" />
 				</div>
 				<div className="poke__card-body">
 					<h2 className="poke__card-name"> {pokemon?.name}</h2>
